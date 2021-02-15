@@ -1,0 +1,36 @@
+02/13/21 10:42:18: style.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:42:18: general.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:43:20: style.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:43:20: general.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:43:35: style.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:43:35: general.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:45:36: style.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:45:36: general.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:47:37: style.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:47:37: general.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:49:37: style.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:49:37: general.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:51:38: style.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:51:38: general.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:53:39: style.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 10:53:39: general.scss - Undefined variable $green1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 67, at column 3
+02/13/21 11:18:41: style.scss - parse error: failed at `margin-top: 0` /var/www/html/wp-content/themes/splend/sass/general.scss on line 96, at column 3
+02/13/21 11:18:41: general.scss - parse error: failed at `margin-top: 0` /var/www/html/wp-content/themes/splend/sass/general.scss on line 96, at column 3
+02/13/21 11:48:00: style.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 74, at column 3
+02/13/21 11:48:00: general.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 74, at column 3
+02/13/21 11:48:56: style.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:48:56: general.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:50:01: style.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:50:01: general.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:50:13: style.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:50:13: general.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:50:28: style.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:50:28: general.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:50:44: style.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 11:50:44: general.scss - Undefined variable $purple1: /var/www/html/wp-content/themes/splend/sass/general.scss on line 59, at column 3
+02/13/21 1:09:05: style.scss - parse error: failed at `justify-content: sp` /var/www/html/wp-content/themes/splend/sass/general.scss on line 103, at column 5
+02/13/21 1:09:05: general.scss - parse error: failed at `justify-content: sp` /var/www/html/wp-content/themes/splend/sass/general.scss on line 103, at column 5
+02/14/21 10:10:11: style.scss - parse error: failed at `background-color: #color: 01e4d3;;` /var/www/html/wp-content/themes/splend/sass/general.scss on line 174, at column 17
+02/14/21 10:10:11: general.scss - parse error: failed at `background-color: #color: 01e4d3;;` /var/www/html/wp-content/themes/splend/sass/general.scss on line 174, at column 17
+02/14/21 10:10:42: style.scss - parse error: failed at `background-color: #color: 01e4d3;;` /var/www/html/wp-content/themes/splend/sass/general.scss on line 174, at column 17
+02/14/21 10:10:42: general.scss - parse error: failed at `background-color: #color: 01e4d3;;` /var/www/html/wp-content/themes/splend/sass/general.scss on line 174, at column 17
