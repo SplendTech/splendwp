@@ -27,6 +27,7 @@ get_header(); ?>
     }
   </style>
 </div>
+
 <div class="section content_about">
   <div class="container">
     <h2><?php the_field( "content_title" ); ?></h2>
@@ -43,6 +44,7 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
 <div class="section journey">
   <div class="container">
     <h2><?php the_field( "journey_title" ); ?></h2>
@@ -62,26 +64,24 @@ get_header(); ?>
         <p><?php the_field( "journey_text2" ); ?></p>
       </div>
     </div>
-
   </div>
 </div>
-
 
 <div class="section video_part">
   <div class="container">
     <div class="modal_wrapper">
       <div class="video-gallery">
-        <a href="<?php the_field( "video_url" ); ?>" >
-            <img src="<?php the_field( "video_thumb" ); ?>" />
-        </a>
-      </div>
-      <div class="absolute_box">
-        <h1><?php the_field( "video_title" ); ?></h1>
-        <a class="url_to_test" href="<?php the_field( "testimonials_url" ); ?>"><?php the_field( "testimonials_text" ); ?></a>
-        <span class="play_button"><i class="fas fa-play"></i></span>
+        <img src="<?php the_field( "video_thumb" ); ?>" />
+        <div class="absolute_box">
+          <div class="topside">
+            <a class="glightbox3" href="<?php the_field( "video_url" ); ?>" ><h1><?php the_field( "video_title" ); ?></h1></a>
+            <a class="url_to_test" href="<?php the_field( "testimonials_url" ); ?>"><?php the_field( "testimonials_text" ); ?></a>
+          </div>
+          <a class="glightbox3" href="<?php the_field( "video_url" ); ?>" ><div class="play_button"><span>&#11208;</span></div></a>
+        </div>
       </div>
     </div>
-    <a class="btn cyan_btn" href="<?php the_field( "testimonials_url" ); ?>"><?php the_field( "button_label" ); ?></a>
+    <a class="btn cyan_btn btn_testimonial" href="<?php the_field( "testimonials_url" ); ?>"><?php the_field( "testimonials_text" ); ?></a>
   </div>
 </div>
 
@@ -100,7 +100,6 @@ get_header(); ?>
   </div>
 </div>
 
-
 <div class="blog_upsell">
   <div class="container">
     <div class="sides">
@@ -108,9 +107,8 @@ get_header(); ?>
           <?php while ( have_rows('featured_posts') ) : the_row(); ?>
             <div class="third">
               <h4>  <a href="<?php the_sub_field('url'); ?>"><?php the_sub_field('title'); ?></a></h4>
-                <p><?php the_sub_field('content'); ?>></p>
+                <p><?php the_sub_field('content'); ?></p>
                 <a class="arrow_link" target="_blank" href="<?php the_sub_field('url'); ?>"><i class="fas fa-arrow-right"></i></a>
-
             </div>
           <?php endwhile; ?>
       <?php endif; ?>
@@ -119,8 +117,9 @@ get_header(); ?>
   </div>
 </div>
 
-
 <?php get_footer(); ?>
 <script>
-    jQuery('.video-gallery').lightGallery({controls:false, thumbnail:false});
+  var lightboxVideo = GLightbox({
+      selector: '.glightbox3'
+  });
 </script>

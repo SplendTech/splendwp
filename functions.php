@@ -145,6 +145,11 @@ function splend_scripts() {
 
 	wp_enqueue_script( 'splend-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
+	wp_enqueue_script( 'splend-lightbox', get_template_directory_uri() . '/lightbox/lightbox.js', array() );
+	wp_enqueue_style( 'splend-lightbox-css', get_template_directory_uri() . '/lightbox/lightbox.css', array() );
+
+	// wp_enqueue_script( 'splend-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -199,3 +204,28 @@ function theme_scripts() {
   wp_enqueue_script('jquery');
 }
 add_action('wp_enqueue_scripts', 'theme_scripts');
+
+
+
+/* Add template as admin column */
+add_filter( 'manage_pages_columns', 'page_column_views' );
+add_action( 'manage_pages_custom_column', 'page_custom_column_views', 5, 2 );
+function page_column_views( $defaults )
+{
+   $defaults['page-layout'] = __('Template');
+   return $defaults;
+}
+function page_custom_column_views( $column_name, $id )
+{
+   if ( $column_name === 'page-layout' ) {
+       $set_template = get_post_meta( get_the_ID(), '_wp_page_template', true );
+       if ( $set_template == 'default' ) {
+           echo 'Default';
+       }
+       $templates = get_page_templates();
+       ksort( $templates );
+       foreach ( array_keys( $templates ) as $template ) :
+           if ( $set_template == $templates[$template] ) echo $template;
+       endforeach;
+   }
+}

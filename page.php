@@ -15,24 +15,34 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<div class="section hero_part inner_global">
+	<div class="container">
+		<div class="sides">
+			<div class="left">
+				<h1><?php the_title(); ?></h1>
+			</div>
+			<div class="right">
+			</div>
+		</div>
+	</div>
+	<style>
+		.hero_part {
+			background-image:url(<?php the_field( "blog_hero", 'option'); ?>);
+		}
+		@media(max-width:480px){
+			.hero_part {
+				background-image:url(<?php the_field( "blog_hero_fallback", 'option'); ?>);
+			}
+		}
+	</style>
+</div>
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+<div class="post_main">
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
-<?php
-get_sidebar();
-get_footer();
+	<div class="container">
+		<div class="default_page">
+			<?php the_content(); ?>
+		</div>
+	</div>
+</div>
+<?php get_footer();

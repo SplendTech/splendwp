@@ -34,6 +34,24 @@
 					?>
 				</div>
 			</div>
+			<div class="footer_menu_middle">
+				<div class="container">
+					<?php
+						wp_nav_menu( array(
+							'menu' => 'Unused'
+						) );
+					?>
+				</div>
+			</div>
+			<div class="footer_menu_middle">
+				<div class="container">
+					<?php
+						wp_nav_menu( array(
+							'menu' => 'Unused2'
+						) );
+					?>
+				</div>
+			</div>
 			<div class="footer_blocks sides">
 				<div class="container">
 					<div class="quarter">
@@ -116,5 +134,6 @@ scrollToTopButton.onclick = function(e) {
 	scrollToTop();
 }
 </script>
+</div>
 </body>
 </html>

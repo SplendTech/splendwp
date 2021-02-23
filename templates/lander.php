@@ -52,7 +52,7 @@ get_header(); ?>
     <div class="global_box">
       <h2>
         <div class="topit">
-          <?php the_field('member_title', 'option'); ?> 
+          <?php the_field('member_title', 'option'); ?>
         </div>
         <div class="underit">
           <?xml version="1.0" standalone="no"?>
@@ -117,9 +117,8 @@ get_header(); ?>
                 setup_postdata($post); ?>
                 <div class="third">
                   <h4>  <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-                    <p><?php  the_excerpt(); ?></p>
-                    <a class="arrow_link" href="<?php the_permalink(); ?>"><i class="fas fa-arrow-right"></i></a>
-
+                  <p><?php echo wp_trim_words( get_the_content(), 22, '...' ); ?></p>
+                  <a class="arrow_link" href="<?php the_permalink(); ?>"><i class="fas fa-arrow-right"></i></a>
                 </div>
             <?php endforeach; ?>
             <?php

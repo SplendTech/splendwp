@@ -37,6 +37,7 @@ get_header(); ?>
     }
   </style>
 </div>
+
 <div class="section partners">
   <div class="container">
     <h2><?php the_field( "partners_title", "option" ); ?></h2>
@@ -49,6 +50,7 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
 <div class="section howitworks">
   <div class="container">
     <div class="sides">
@@ -63,21 +65,21 @@ get_header(); ?>
         <img src="<?php the_field( "how_it_works_right_image" ); ?>" alt="<?php the_field( "how_it_works_title" ); ?>">
       </div>
     </div>
-
   </div>
 </div>
+
 <div class="section video_part">
   <div class="container">
     <div class="modal_wrapper">
       <div class="video-gallery">
-        <a href="<?php the_field( "video_url" ); ?>" >
-            <img src="<?php the_field( "video_thumb" ); ?>" />
-        </a>
-      </div>
-      <div class="absolute_box">
-        <h1><?php the_field( "video_title" ); ?></h1>
-        <a class="url_to_test" href="<?php the_field( "testimonials_url" ); ?>"><?php the_field( "testimonials_text" ); ?></a>
-        <span class="play_button"><i class="fas fa-play"></i></span>
+        <img src="<?php the_field( "video_thumb" ); ?>" />
+        <div class="absolute_box">
+          <div class="topside">
+            <a class="glightbox3" href="<?php the_field( "video_url" ); ?>" ><h1><?php the_field( "video_title" ); ?></h1></a>
+            <a class="url_to_test" href="<?php the_field( "testimonials_url" ); ?>"><?php the_field( "testimonials_text" ); ?></a>
+          </div>
+          <a class="glightbox3" href="<?php the_field( "video_url" ); ?>" ><div class="play_button"><span>&#11208;</span></div></a>
+        </div>
       </div>
     </div>
   </div>
@@ -100,9 +102,9 @@ get_header(); ?>
           <?php endwhile; ?>
       <?php endif; ?>
     </div>
-
   </div>
 </div>
+
 <div class="section testimonials">
   <div class="container">
     <h2> <?php the_field( "reviews_title" ); ?> </h2>
@@ -111,7 +113,7 @@ get_header(); ?>
       <?php if ( have_rows('reviews') ): ?>
           <?php while ( have_rows('reviews') ) : the_row(); ?>
             <div class="single_test">
-              <h4><?php the_sub_field('review_title') ?></h4>3
+              <h4><?php the_sub_field('review_title') ?></h4>
               <p><?php the_sub_field('review_text') ?></p>
             </div>
           <?php endwhile; ?>
@@ -119,6 +121,7 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
 <div class="section global_footer_banners">
   <div class="container">
     <div class="footer_buttons">
@@ -127,20 +130,11 @@ get_header(); ?>
     </div>
   </div>
 </div>
+
 <?php get_footer(); ?>
 <script>
-  jQuery('.video-gallery').lightGallery({
-    controls:false,
-    thumbnail:false,
-    vimeoPlayerParams: {
-      autoplay: 1,
-      loop: 0,
-      byline : 0,
-      portrait : 0,
-      title: 0,
-      fourceAutoplay: true,
-      color : 'CCCCCC',
-    },
+  var lightboxVideo = GLightbox({
+      selector: '.glightbox3'
   });
   jQuery(".play_button").on("click", () => {
     jQuery("video-gallery").trigger("click");
@@ -152,10 +146,10 @@ get_header(); ?>
     dots: true,
     infinite: true,
     arrows:false,
-    speed: 300,
+    speed: 700,
     slidesToShow: 1,
     adaptiveHeight: true,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 4000,
   });
 </script>

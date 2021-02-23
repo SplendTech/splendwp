@@ -34,3 +34,5 @@
 02/14/21 10:10:11: general.scss - parse error: failed at `background-color: #color: 01e4d3;;` /var/www/html/wp-content/themes/splend/sass/general.scss on line 174, at column 17
 02/14/21 10:10:42: style.scss - parse error: failed at `background-color: #color: 01e4d3;;` /var/www/html/wp-content/themes/splend/sass/general.scss on line 174, at column 17
 02/14/21 10:10:42: general.scss - parse error: failed at `background-color: #color: 01e4d3;;` /var/www/html/wp-content/themes/splend/sass/general.scss on line 174, at column 17
+02/23/21 11:15:14: style.scss - unexpected }: failed at `` /var/www/html/wp-content/themes/splend/sass/general.scss on line 2069, at column 2
+02/23/21 11:15:14: general.scss - unexpected }: failed at `` /var/www/html/wp-content/themes/splend/sass/general.scss on line 2069, at column 2

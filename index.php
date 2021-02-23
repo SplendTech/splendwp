@@ -12,46 +12,94 @@
  * @package Splend
  */
 
-get_header();
-?>
 
-	<main id="primary" class="site-main">
+   get_header();
 
-		<?php
-		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+   ?>
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+   <div class="section hero_part inner_global">
+     <div class="container">
+       <div class="sides">
+         <div class="left">
+           <h1><?php the_title(); ?></h1>
+           <div class="paragraph">
+  						<?php echo category_description(); ?>
+  					</div>
+         </div>
+         <div class="right">
+         </div>
+       </div>
+     </div>
+     <style>
+       .hero_part {
+         background-image:url(<?php the_field( "blog_hero", 'option'); ?>);
+       }
+       @media(max-width:480px){
+         .hero_part {
+           background-image:url(<?php the_field( "blog_hero_fallback", 'option'); ?>);
+         }
+       }
+     </style>
+   </div>
+  <div class="post_main">
+ <style media="screen">
+   .archive_body .third {
+     width:40%;float:left
+   }
+     .archive_body .twothirds {
+       width:60%;float:right
+     }
+ </style>
+  	<div class="container">
+  		<div class="archive_body">
+         
+          <div class="all_services sides">
+              <?php
+                $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 
-			endwhile;
+                $args = array( 'category_name' => $category_name, 'posts_per_page' => 10,  'paged' => $paged );
+                $loop = new WP_Query( $args );
+                while ( $loop->have_posts() ) : $loop->the_post();
+                  ?>
+                  <div class="single_post sides">
+                     <div class="third">
+                        <h2><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+                         <a class="btn btn_blog" href="<?php the_permalink(); ?>">Read More</a>
+                     </div>
+                     <div class="twothirds">
+                       <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('full'); ?></a>
+                     </div>
+                  </div>
+                  <?php
+                endwhile;
+              ?>
 
-			the_posts_navigation();
+            </div>
+            <div class="my_pagination">
+              <?php
+              $big = 999999999; // need an unlikely integer
 
-		else :
+              echo paginate_links( array(
+                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                'format' => '?paged=%#%',
+                'current' => max( 1, get_query_var('paged') ),
+                'total' => $loop->max_num_pages
+              ) );
+              ?>
 
-			get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
 
-	</main><!-- #main -->
 
-<?php
-get_sidebar();
-get_footer();
+
+            </div>
+
+
+        </div>
+
+    </div>
+  </div>
+
+
+  <?php get_footer(); ?>

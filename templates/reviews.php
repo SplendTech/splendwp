@@ -32,28 +32,36 @@ get_header(); ?>
   <div class="container">
     <div class="alternate">
       <?php if ( have_rows('reviews') ): ?>
-          <?php while ( have_rows('reviews') ) : the_row(); ?>
-            <div class="single_review sides">
-              <div class="left">
-                <h2><?php the_sub_field('title') ?></h2>
-                <p><?php the_sub_field('content') ?></p>
-                <?php if( get_Sub_field( "story_url" ) ) : ?>
-                  <a href="<?php the_sub_field( "story_url" ); ?>">
-                <?php endif; ?>
-              </div>
-              <div class="right">
-                <div class="video-gallery">
-                  <a href="<?php the_sub_field( "video_url" ); ?>" >
-                      <img src="<?php the_sub_field( "video_thumb" ); ?>" />
-                  </a>
-                </div>
-              </div>
+        <?php $i = 0; ?>
+        <?php while ( have_rows('reviews') ) : the_row(); ?>
+          <div class="single_review sides">
+            <div class="left">
+              <h2><?php the_sub_field('title') ?></h2>
+              <p><?php the_sub_field('content') ?></p>
+              <?php if( get_Sub_field( "story_url" ) ) : ?>
+                <a href="<?php the_sub_field( "story_url" ); ?>">Hear his story here >></a>
+              <?php endif; ?>
             </div>
-          <?php endwhile; ?>
+            <div class="right">
+              <div class="video-gallery">
+                <a class="glightbox<?php echo $i; ?>" href="<?php the_sub_field( "video_url" ); ?>" >
+                    <img src="<?php the_sub_field( "video_thumb" ); ?>" />
+                </a>
+              </div>
+              <script>
+                var lightboxVideo<?php echo $i; ?> = GLightbox({
+                    selector: '.glightbox<?php echo $i; ?>'
+                });
+              </script>
+            </div>
+          </div>
+          <?php $i++; ?>
+        <?php endwhile; ?>
       <?php endif; ?>
     </div>
   </div>
 </div>
+
 <div class="section more_testimonials">
   <div class="container">
       <h3 class="more_toggler">See more testimonials</h3>
@@ -71,6 +79,17 @@ get_header(); ?>
   </div>
 </div>
 
+<script>
+var $ = jQuery;
+$(document).ready(function(){
+	$('.more_toggler').on('click', function(e){
+		e.preventDefault();
+    $('.more_toggler').toggleClass('opened');
+		$('.more_loop').toggleClass('opened');
+	});
+});
+</script>
+
 <div class="orange_part">
   <div class="section global_on_inner">
     <div class="container">
@@ -84,6 +103,7 @@ get_header(); ?>
       </div>
     </div>
   </div>
+
   <div class="section prices_part">
     <div class="container">
       <div class="sides">
@@ -133,10 +153,7 @@ get_header(); ?>
         </a>
       </div>
     </div>
-
   </div>
 </div>
+
 <?php get_footer(); ?>
-<script>
-  jQuery('.video-gallery').lightGallery({controls:false, thumbnail:false});
-</script>

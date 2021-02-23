@@ -36,7 +36,7 @@ get_header(); ?>
         <?php while ( have_rows('categories') ) : the_row(); ?>
           <?php $i++; ?>
 
-            <span data-toggle="<?php echo $i ?>"><?php the_sub_field('category'); ?></span>
+            <span data-toggle="<?php echo $i ?>" class="<?php if( $i == 1 ) {echo "tgactive";} ?>"><?php the_sub_field('category'); ?></span>
 
         <?php endwhile; ?>
       </div>
@@ -47,7 +47,7 @@ get_header(); ?>
         <?php $i=0; ?>
           <?php while ( have_rows('categories') ) : the_row(); ?>
             <?php $i++; ?>
-            <div class="category_box" data-display="<?php echo $i ?>">
+            <div class="category_box <?php if( $i != 1 ) {echo "starts_hidden";} ?>" data-display="<?php echo $i ?>" >
               <h2><?php the_sub_field('category'); ?></h2>
                 <div class="subcategory_box">
                   <?php if ( have_rows('subcategories') ): ?>
@@ -98,6 +98,13 @@ get_header(); ?>
   </div>
 </div>
 <?php get_footer(); ?>
+
 <script>
-  jQuery('.video-gallery').lightGallery({controls:false, thumbnail:false});
+jQuery('.category_headers span').click(function(){
+  jQuery('.category_headers span').removeClass('tgactive');
+  jQuery('.category_box').hide();
+  var index = jQuery(this).attr('data-toggle');
+  jQuery(this).addClass('tgactive');
+  jQuery('.category_box[data-display="' + index + '"]').show();
+})
 </script>
